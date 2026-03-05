@@ -6,7 +6,7 @@ Conformance checking compares real-world behavior with normative process models 
 
 This tool computes **fitness** and **precision** metrics for all three TOTeM dimensions and provides an interactive web-based visualization of the conformance checking results.
 
-![TOTeM Conformance Checking Explorer](totem-tool.png)
+![TOTeM Conformance Checking Explorer](docs/figures/totem-tool.png)
 
 *The TOTeM conformance checking explorer showing fitness/precision values, event cardinality by activity, temporal relations by relation type, and log cardinality by relation type for the container logistics event log.*
 
@@ -50,7 +50,7 @@ The conformance checking approach was evaluated on 8 publicly accessible event l
 
 Fitness and precision balance each other as expected: at tau = 1 the miner considers all behavior and fitness is always 1, while precision is lowest. Lowering tau towards 0 increases precision and decreases fitness.
 
-![Fitness and Precision vs. Tau](totem_lib/evaluation/conformance_metrics_vs_tau_combined.png)
+![Fitness and Precision vs. Tau](docs/figures/conformance_metrics_vs_tau_combined.png)
 
 *Fitness (top row) and precision (bottom row) for the temporal, log cardinality, and event cardinality dimensions across different tau values for all 8 event logs.*
 
@@ -58,7 +58,7 @@ Fitness and precision balance each other as expected: at tau = 1 the miner consi
 
 For the evaluated logs, the algorithm scales linearly with the number of events and objects, and exponentially with the number of TOTeM arcs. For 7 of the 8 event logs the computation finishes in under 10 seconds on consumer hardware. Only the Age of Empires log (>2.3M events, >300K objects, 30 types) takes an average of ~350 seconds.
 
-![Conformance Checking Runtime](totem_lib/evaluation/conformance_time_combined_arcs.png)
+![Conformance Checking Runtime](docs/figures/conformance_time_combined_arcs.png)
 
 *Runtime in seconds over the number of events, number of objects, and number of TOTeM arcs (y-axis and event/object x-axes are logarithmic).*
 
