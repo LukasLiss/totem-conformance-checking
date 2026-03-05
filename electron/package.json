@@ -1,0 +1,49 @@
+{
+  "name": "totem-tool",
+  "version": "1.0.0",
+  "description": "TOTeM-Tool Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.totem.tool",
+    "productName": "TOTeM-Tool",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "resources/frontend-build"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/backend",
+        "to": "backend"
+      },
+      {
+        "from": "resources/totem_lib",
+        "to": "totem_lib"
+      }
+    ],
+    "win": {
+      "target": "dir"
+    },
+    "asar": false
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^37.2.3",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "tree-kill": "^1.2.2"
+  }
+}
